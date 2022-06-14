@@ -1,0 +1,20 @@
+{
+  "name": "cookie-blocker",
+  "version": "0.1.0",
+  "description": "should block any view asking to accept cookies from any page",
+  "content_script": ["content/content.js"],
+  "backgroud": {
+    "page": "background/index.html"
+  },
+  "permission": ["storage"],
+  "browser_action": {
+    "default_icon": "icons/48x48-icon.png",
+    "default_title": "CookieBlocker",
+    "default_popup": "popup/menu.html"
+  },
+  "icon": {
+    "48": "48x48-icon.png",
+    "128": "128x128-icon.png"
+  },
+  "extension_version": 2
+}
