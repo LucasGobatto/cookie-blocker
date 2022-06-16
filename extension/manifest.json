@@ -1,6 +1,6 @@
 {
   "name": "cookie-blocker",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "should block any view asking to accept cookies from any page",
   "content_scripts": [
     {

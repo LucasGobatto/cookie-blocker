@@ -1,17 +1,17 @@
-console.log("running extension cookie blocker");
+import * as config from "./config.json";
 
-const TEN_SECONDS = 10 * 1000;
-const ONE_AND_A_HALF_SECONDS = 1.5 * 1000;
+console.log("running extension cookie blocker");
+const { attrs, values, excludedTags, initialSleep, repeatSleep } = config;
 
 window.addEventListener("load", exec);
 
 async function exec() {
   try {
-    await sleep(ONE_AND_A_HALF_SECONDS);
+    await sleep(initialSleep);
 
     while (true) {
       await cleanCookie();
-      await sleep(TEN_SECONDS);
+      await sleep(repeatSleep);
     }
   } catch (error) {
     console.log(`ERROR - CookieBlocker Extension - ${error}`);
@@ -21,9 +21,6 @@ async function exec() {
 function sleep(time) {
   return new Promise((res) => setTimeout(() => res(), time));
 }
-
-const attrs = ["id", "class"];
-const values = ["cookie", "banner", "popup", "pub", "adopt", "ads"];
 
 const cleanCookie = async () => {
   console.log("searching cookies");
@@ -51,6 +48,5 @@ const cleanCookie = async () => {
 };
 
 function filterValidTags(cookieTags) {
-  const excludedTags = ["BODY", "HEAD", "HTML"];
   return cookieTags.filter((tag) => tag.style.display !== "none" && !excludedTags.includes(tag.tagName));
 }

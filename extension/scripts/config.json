@@ -1,0 +1,7 @@
+{
+  "attr": ["class", "id"],
+  "values": ["cookie", "banner", "popup", "pub", "adopt", "ads", "Ad", "ad-", "-ad", "push-notification"],
+  "excludeTags": ["HTML", "HEAD", "BODY"],
+  "initialSleep": 2000,
+  "repeatSleep": 10000
+}
