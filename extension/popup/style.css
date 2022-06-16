@@ -22,3 +22,7 @@ h3, p {
   color: rgb(210, 210, 210);
   margin: 10px;
 }
+
+p {
+  padding-bottom: 10px; 
+}
